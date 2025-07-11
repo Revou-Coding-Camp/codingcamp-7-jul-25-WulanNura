@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+    <!-- Tailwind -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- memanggil file css external -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-pink-300 min-h-screen flex items-center justify-center">
+
+    <div class="max-w-3xl mx-auto todo-container">
+        <h1 class="text-3xl font-bold text-center mb-6 text-pink-600">My To Do List</h1>
+
+        <!-- Form Input -->
+        <form id="todo-form" class="grid grid-cols-4 gap-4 mb-6">
+            <input type="text" id="todo-input" class="col-span-1 p-2 border border-pink-700 rounded" placeholder="Add a todo....">
+            <input type="date" id="date-input" class="col-span-1 p-2 border border-pink-700 rounded text-gray-800" placeholder="mm/dd/yyyy">
+            <select id="status-input" class="col-span-1 border border-pink-700 rounded">
+                <option value="On progress">On Progress</option>
+                <option value="Done">Done</option>
+            </select>
+            <button type="submit" class=" col-span-1 text-white px-4 py-2 bg-pink-300 rounded hover:bg-pink-700">Add</button>
+        </form>
+        <!-- Filter dan Delete All -->
+        <div class="flex justify-between items-center mb-4 gap-4">
+            <div class="flex items-center gap-2">
+                <label for="status-filter" class="text-sm text-pink-800">Filter Status :</label>
+                <select id="status-filter" class="p-2 border border-pink-300 rounded text-sm">
+                    <option value="">All</option>
+                    <option value="On Progress">On Progress</option>
+                    <option value="Done">Done</option>
+                </select>
+            </div>
+            
+            <button id="delete-all" class="bg-pink-300 text-white px-4 py-2 rounded hover:bg-pink-700">DELETE ALL</button>
+        </div>
+
+        <!-- Tabel di bawah -->
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left border border-pink-200">
+            <thead class="bg-pink-200 text-pink-200">
+                <tr class="text-pink-600">
+                    <th class="p-2">Task</th>
+                    <th class="p-2">Date</th>
+                    <th class="p-2">Status</th>
+                    <th class="p-2">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="todo-table-body" class="bg-pink-50 text-pink-800">
+                <!-- isi data nya akan masuk lewat js -->
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
